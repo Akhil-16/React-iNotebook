@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Link} from "react-router-dom"
-
+import noteContext from "../Context/notes/noteContext"
+import {useNavigate} from "react-router-dom"
 const Navbar = () => {
+
+  const context= useContext(noteContext)
+  const {loginverification}=context
+  console.log("verification is",loginverification)
+
   return (
-   
     
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -17,10 +22,13 @@ const Navbar = () => {
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/About">About</a>
+          <a className="nav-link" href={(loginverification=="")?"/Login":"/About"}>About</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/Login">Login</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/NewSection">NewSection</a>
         </li>
 
 

@@ -1,14 +1,21 @@
-import React, { useContext} from 'react'
-import noteContext from '../Context/notes/noteContext'
+import React, { useContext, useEffect} from 'react'
 
-const About = () => {
-  const a=useContext(noteContext)
+
+const About = (props) => {
+
+  // useEffect(()=>{
+  //   props.name("sai teja")
+
+  // },[])
+
 
 
   return (
     <>
-    {a.loading && <div>...Loading .....please wait</div>}
-     {!a.loading && <div>About {a.value}</div>}
+    {/* {a.loading && <div>...Loading .....please wait</div>}
+     {!a.loading && <div>About {a.value}</div>} */}
+     {/* <h1>{props.name}</h1> */}
+    
     </>
     
 

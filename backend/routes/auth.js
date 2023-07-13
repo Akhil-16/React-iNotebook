@@ -62,7 +62,7 @@ if(user==null){
 }
 const password_check=await bcrypt.compare(password,user.password)
 if(!password_check){
-   return  res.status(500).json({error:"Check the credentials"})
+   return  res.send({error:"Check the credentials"})
     
 }
 const authtoken=jwt.sign({payload:user.id},JWT_SECRET)
